@@ -1,12 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>CV - Amine Nfissi</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <h1>Bonjour, je suis la version 1 de AMINE NFISSI</h1>
+    <button id="theme-toggle"><i class="fas fa-moon"></i> Mode Sombre</button>
+
+    <div class="cv-container">
+        <!-- En-tête / Profil -->
+        <header class="header">
+            <div class="profile-img-container">
+                <img src="ana.jpeg" alt="Photo de Amine Nfissi" class="profile-img">
+            </div>
+            <div class="header-text">
+                <h1>Amine Nfissi</h1>
+                <h2>Étudiant en Informatique (3ème année ESISA)</h2>
+                <p>20 ans | Développeur en devenir, passionné par les flux de données et le travail collaboratif.</p>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Colonne de gauche -->
+            <aside class="left-column">
+                <section class="contact-info">
+                    <h3><i class="fas fa-address-card"></i> Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Fès, Maroc</li>
+                        <li><i class="fas fa-envelope"></i> amine.nfissi@email.com</li>
+                        <li><i class="fas fa-phone"></i> +212 6 00 00 00 00</li>
+                    </ul>
+                </section>
+
+                <section class="skills">
+                    <h3><i class="fas fa-user-tie"></i> Compétences Humaines</h3>
+                    <ul class="soft-skills">
+                        <li>Esprit d'équipe</li>
+                        <li>Résolution de problèmes</li>
+                        <li>Adaptabilité</li>
+                        <li>Communication professionnelle</li>
+                        <li>Autonomie & Rigueur</li>
+                    </ul>
+                </section>
+
+                <section class="hobbies">
+                    <h3><i class="fas fa-heart"></i> Loisirs</h3>
+                    <ul>
+                        <li>Veille technologique</li>
+                        <li>Programmation compétitive</li>
+                        <li>Sport (Football, Natation)</li>
+                        <li>Jeux de stratégie</li>
+                    </ul>
+                </section>
+            </aside>
+
+            <!-- Colonne de droite -->
+            <main class="right-column">
+                <section class="education">
+                    <h3><i class="fas fa-graduation-cap"></i> Éducation</h3>
+                    <div class="timeline-item">
+                        <div class="date">Présent</div>
+                        <div class="content">
+                            <h4>3ème année du cycle d'Ingénierie</h4>
+                            <p><strong>ESISA</strong> (École Supérieure d'Ingénierie en Sciences Appliquées)</p>
+                            <p>Formation approfondie en développement, systèmes d'information et nouvelles technologies.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience">
+                    <h3><i class="fas fa-briefcase"></i> Expérience Professionnelle</h3>
+                    <div class="timeline-item">
+                        <div class="date">Stage récent</div>
+                        <div class="content">
+                            <h4>Stagiaire en Développement</h4>
+                            <p><strong>SAS Transport SARL</strong></p>
+                            <p><em>Mission principale :</em> Développement et optimisation de flux de données.</p>
+                            <ul>
+                                <li>Analyse des besoins de l'entreprise en matière de transport et de logistique.</li>
+                                <li>Conception et développement de solutions pour la gestion des flux de données.</li>
+                                <li>Collaboration avec l'équipe pour assurer l'intégrité et la fluidité de l'information.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
