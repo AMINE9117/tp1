@@ -1,97 +1,187 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Amine Nfissi</title>
-    <link rel="stylesheet" href="index.css">
-    <!-- Font Awesome pour les icônes -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amine Nfissi — Étudiant ingénieur informatique</title>
+  <meta name="description" content="Portfolio d'Amine Nfissi, étudiant en 3ᵉ année à l'ESISA, développement web, bases de données et flux de données.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <button id="theme-toggle"><i class="fas fa-moon"></i> Mode Sombre</button>
+  <div class="progress" id="progress"></div>
 
-    <div class="cv-container">
-        <!-- En-tête / Profil -->
-        <header class="header">
-            <div class="profile-img-container">
-                <img src="ana.jpeg" alt="Photo de Amine Nfissi" class="profile-img">
-            </div>
-            <div class="header-text">
-                <h1>Amine Nfissi</h1>
-                <h2>Étudiant en Informatique (3ème année ESISA)</h2>
-                <p>20 ans | Développeur en devenir, passionné par les flux de données et le travail collaboratif.</p>
-            </div>
-        </header>
+  <header class="nav" id="nav">
+    <a class="brand" href="#accueil">Amine Nfissi</a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="links" id="links">
+      <a href="#apropos">À propos</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#equipe">Esprit d'équipe</a>
+      <a href="#loisirs">Loisirs</a>
+      <a class="cta-link" href="#contact">Me contacter</a>
+    </nav>
+  </header>
 
-        <div class="main-content">
-            <!-- Colonne de gauche -->
-            <aside class="left-column">
-                <section class="contact-info">
-                    <h3><i class="fas fa-address-card"></i> Contact</h3>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> Fès, Maroc</li>
-                        <li><i class="fas fa-envelope"></i> amine.nfissi@email.com</li>
-                        <li><i class="fas fa-phone"></i> +212 6 00 00 00 00</li>
-                    </ul>
-                </section>
-
-                <section class="skills">
-                    <h3><i class="fas fa-user-tie"></i> Compétences Humaines</h3>
-                    <ul class="soft-skills">
-                        <li>Esprit d'équipe</li>
-                        <li>Résolution de problèmes</li>
-                        <li>Adaptabilité</li>
-                        <li>Communication professionnelle</li>
-                        <li>Autonomie & Rigueur</li>
-                    </ul>
-                </section>
-
-                <section class="hobbies">
-                    <h3><i class="fas fa-heart"></i> Loisirs</h3>
-                    <ul>
-                        <li>Veille technologique</li>
-                        <li>Programmation compétitive</li>
-                        <li>Sport (Football, Natation)</li>
-                        <li>Jeux de stratégie</li>
-                    </ul>
-                </section>
-            </aside>
-
-            <!-- Colonne de droite -->
-            <main class="right-column">
-                <section class="education">
-                    <h3><i class="fas fa-graduation-cap"></i> Éducation</h3>
-                    <div class="timeline-item">
-                        <div class="date">Présent</div>
-                        <div class="content">
-                            <h4>3ème année du cycle d'Ingénierie</h4>
-                            <p><strong>ESISA</strong> (École Supérieure d'Ingénierie en Sciences Appliquées)</p>
-                            <p>Formation approfondie en développement, systèmes d'information et nouvelles technologies.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="experience">
-                    <h3><i class="fas fa-briefcase"></i> Expérience Professionnelle</h3>
-                    <div class="timeline-item">
-                        <div class="date">Stage récent</div>
-                        <div class="content">
-                            <h4>Stagiaire en Développement</h4>
-                            <p><strong>SAS Transport SARL</strong></p>
-                            <p><em>Mission principale :</em> Développement et optimisation de flux de données.</p>
-                            <ul>
-                                <li>Analyse des besoins de l'entreprise en matière de transport et de logistique.</li>
-                                <li>Conception et développement de solutions pour la gestion des flux de données.</li>
-                                <li>Collaboration avec l'équipe pour assurer l'intégrité et la fluidité de l'information.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-            </main>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="accueil">
+      <canvas id="flow" aria-hidden="true"></canvas>
+      <div class="hero-inner">
+        <p class="hello">Bonjour, je suis</p>
+        <h1 class="name" aria-label="Amine Nfissi">
+          <span class="line"><span class="word">Amine</span></span>
+          <span class="line"><span class="word">Nfissi</span></span>
+        </h1>
+        <p class="role">Étudiant ingénieur en informatique, <span class="typed" id="typed"></span><span class="caret"></span></p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projets">Voir mes projets</a>
+          <a class="btn ghost" href="#contact">Me contacter</a>
         </div>
-    </div>
+      </div>
+      <a class="scroll-hint" href="#apropos" aria-label="Défiler vers le bas"><span></span></a>
+    </section>
 
-    <script src="index.js"></script>
+    <!-- A PROPOS -->
+    <section class="section" id="apropos">
+      <div class="wrap about">
+        <div class="photo-col reveal">
+          <div class="photo">
+            <img src="ana.jpg" alt="Portrait d'Amine Nfissi" id="ana" onerror="this.remove()">
+            <span class="monogram" aria-hidden="true">AN</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <h2>À propos</h2>
+          <p>J'ai 20 ans et je suis en troisième année à l'<strong>ESISA</strong>, en informatique et ingénierie. J'aime transformer un problème flou en quelque chose qui fonctionne : une page web, une requête SQL, un pipeline de données.</p>
+          <p>Mon stage chez <strong>SAS Transport SARL</strong> m'a appris à travailler sur des flux de données réels, avec des contraintes de fiabilité et de délais. Je cherche maintenant de nouvelles occasions de progresser sur des projets concrets.</p>
+          <ul class="facts">
+            <li><strong data-count="20">0</strong><span>ans</span></li>
+            <li><strong data-count="3">0</strong><span>ᵉ année à l'ESISA</span></li>
+            <li><strong data-count="1">0</strong><span>stage réalisé</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARCOURS -->
+    <section class="section alt" id="parcours">
+      <div class="wrap">
+        <h2 class="reveal">Parcours</h2>
+        <ol class="timeline">
+          <li class="reveal">
+            <span class="dot"></span>
+            <div class="card">
+              <h3>Stage — Développement de flux de données</h3>
+              <p class="meta">SAS Transport SARL</p>
+              <p>Conception et mise en place de flux de données : collecte, transformation et acheminement des informations entre les différents outils de l'entreprise.</p>
+            </div>
+          </li>
+          <li class="reveal">
+            <span class="dot"></span>
+            <div class="card">
+              <h3>Cycle informatique et ingénierie, 3ᵉ année</h3>
+              <p class="meta">ESISA</p>
+              <p>Algorithmique et structures de données, développement web, bases de données, traitement du signal et génie logiciel, en projets individuels et en équipe.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section class="section" id="projets">
+      <div class="wrap">
+        <h2 class="reveal">Projets</h2>
+        <div class="grid projects">
+          <article class="project tilt reveal">
+            <h3>HelpDesk</h3>
+            <p>Application web de gestion de tickets d'assistance, réalisée en équipe.</p>
+            <ul class="tags"><li>PHP</li><li>SQL</li><li>Travail d'équipe</li></ul>
+          </article>
+          <article class="project tilt reveal">
+            <h3>Dames marocaines</h3>
+            <p>Jeu de dames marocaines avec interface graphique : règles de prise, déplacement des pions et des dames.</p>
+            <ul class="tags"><li>Python</li><li>Tkinter</li></ul>
+          </article>
+          <article class="project tilt reveal">
+            <h3>Portfolio</h3>
+            <p>Ce site : HTML, CSS et JavaScript, sans framework, avec animations et mise en page adaptée au mobile.</p>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          </article>
+          <article class="project tilt reveal">
+            <h3>Flux de données</h3>
+            <p>Travail de stage chez SAS Transport SARL : mise en place de flux entre systèmes internes.</p>
+            <ul class="tags"><li>Données</li><li>Stage</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section class="section alt" id="competences">
+      <div class="wrap">
+        <h2 class="reveal">Compétences</h2>
+        <div class="skills">
+          <div class="skill reveal"><div class="skill-head"><span>Développement web</span><em>HTML, CSS, JavaScript, PHP</em></div><div class="bar"><i style="--w:85%"></i></div></div>
+          <div class="skill reveal"><div class="skill-head"><span>Bases de données</span><em>SQL, modélisation</em></div><div class="bar"><i style="--w:80%"></i></div></div>
+          <div class="skill reveal"><div class="skill-head"><span>Algorithmique</span><em>Structures de données, complexité</em></div><div class="bar"><i style="--w:80%"></i></div></div>
+          <div class="skill reveal"><div class="skill-head"><span>Python</span><em>Scripts, interfaces Tkinter</em></div><div class="bar"><i style="--w:75%"></i></div></div>
+          <div class="skill reveal"><div class="skill-head"><span>Génie logiciel</span><em>Conception, versionnage, tests</em></div><div class="bar"><i style="--w:70%"></i></div></div>
+          <div class="skill reveal"><div class="skill-head"><span>Traitement du signal</span><em>Bases théoriques et applications</em></div><div class="bar"><i style="--w:65%"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESPRIT D'EQUIPE -->
+    <section class="section" id="equipe">
+      <div class="wrap">
+        <h2 class="reveal">Esprit d'équipe et qualités</h2>
+        <div class="grid qualities">
+          <div class="quality reveal"><h3>Travail d'équipe</h3><p>Je partage l'information tôt, je respecte les délais convenus et j'aide les autres à débloquer leurs tâches.</p></div>
+          <div class="quality reveal"><h3>Communication</h3><p>J'explique mes choix simplement, à l'oral comme à l'écrit, et je sais écouter les retours.</p></div>
+          <div class="quality reveal"><h3>Rigueur</h3><p>Je vérifie mes résultats, je documente ce que je fais et je cherche la cause d'un problème avant de le corriger.</p></div>
+          <div class="quality reveal"><h3>Autonomie</h3><p>Je peux avancer seul sur un sujet nouveau, et je demande de l'aide quand c'est le plus efficace.</p></div>
+          <div class="quality reveal"><h3>Curiosité</h3><p>J'apprends en construisant : chaque projet est l'occasion de tester un outil ou une méthode nouvelle.</p></div>
+          <div class="quality reveal"><h3>Adaptabilité</h3><p>Je m'adapte aux outils et aux méthodes d'une équipe, comme pendant mon stage.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOISIRS -->
+    <section class="section alt" id="loisirs">
+      <div class="wrap">
+        <h2 class="reveal">Loisirs</h2>
+        <div class="hobbies">
+          <div class="hobby reveal"><span class="emoji">⚽</span><h3>Football</h3><p>Le jeu collectif par excellence.</p></div>
+          <div class="hobby reveal"><span class="emoji">♟️</span><h3>Jeux de stratégie</h3><p>Échecs et dames, qui m'ont inspiré un projet.</p></div>
+          <div class="hobby reveal"><span class="emoji">💻</span><h3>Veille technologique</h3><p>Articles, tutoriels et petits projets personnels.</p></div>
+          <div class="hobby reveal"><span class="emoji">🎧</span><h3>Musique</h3><p>Pour se concentrer ou se détendre.</p></div>
+          <div class="hobby reveal"><span class="emoji">✈️</span><h3>Voyages</h3><p>Découvrir d'autres villes et d'autres façons de faire.</p></div>
+          <div class="hobby reveal"><span class="emoji">📚</span><h3>Lecture</h3><p>Technique, mais aussi romans et essais.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <div class="wrap reveal">
+        <h2>Travaillons ensemble</h2>
+        <p>Vous cherchez un stagiaire ou un développeur motivé ? Écrivez-moi.</p>
+        <a class="btn primary big" href="mailto:amine.nfissi@example.com" id="mail">amine.nfissi@example.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Amine Nfissi. Étudiant à l'ESISA.</p>
+    <a href="#accueil">Haut de page</a>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>
